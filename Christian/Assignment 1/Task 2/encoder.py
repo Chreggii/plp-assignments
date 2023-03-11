@@ -1,24 +1,24 @@
+from rot_operator import RotOperator
+from string_ascii_converter import StringAsciiConverter
+
+
 class Encoder:
-    def to_ascii(string):
-        return [ord(character) for character in string]
 
-    def to_string(ascii_list):
-        return ''.join([chr(x) for x in ascii_list])
+    def __init__(self, string_to_encode, offset, additional_string):
+        self.string_to_encode = string_to_encode
+        self.offset = offset
+        self.additional_string = additional_string
 
-    def rot(phrase, offset):
-        abc = "abcdefghijklmnopqrstuvwxyz"
-        out_phrase = ""
-        for char in phrase:
-            out_phrase += abc[(abc.find(char)+offset) % 26]
-        return out_phrase
-
-    def encode_string(string_to_encode, offset, additional_string):
-
+    # Encodes string and returns value
+    def encode_string(self):
         # Convert the string to a list of ASCII values
-        ascii_values = Encoder.to_ascii(string_to_encode)
+        ascii_values = StringAsciiConverter.to_ascii(self.string_to_encode)
+
+        # Convert the additional string to a list of ASCII values
+        additional_values = StringAsciiConverter.to_ascii(
+            self.additional_string)
 
         # Insert additional values between each existing value
-        additional_values = Encoder.to_ascii(additional_string)
         listLength = len(ascii_values)
         # iterator for insert position
         i = 1
@@ -31,7 +31,7 @@ class Encoder:
             x += 1
 
         # Convert ascii values to strings
-        encoded_string = Encoder.to_string(ascii_values)
+        encoded_string = StringAsciiConverter.to_string(ascii_values)
 
         # Apply rot and return value
-        return Encoder.rot(encoded_string, offset)
+        return RotOperator(encoded_string, self.offset).apply_rot()
