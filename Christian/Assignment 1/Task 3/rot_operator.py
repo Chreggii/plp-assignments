@@ -14,6 +14,6 @@ class RotOperator:
             out_phrase += abc[(abc.find(char)+offset) % 26]
         return out_phrase
 
-    # Apply ROT
+    # Reset ROT
     def rest_rot(self):
         return self.apply_rot(self.offset*(-1))
