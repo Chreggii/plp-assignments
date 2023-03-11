@@ -6,17 +6,18 @@ from string_ascii_converter import StringAsciiConverter
 
 class Encoder:
 
-    def __init__(self, string_to_encode, offset):
+    def __init__(self, string_to_encode, offset, additional_string=None):
         self.string_to_encode = string_to_encode
         self.offset = offset
+        self.additional_string = additional_string
 
     # Encodes string and returns value
     def encode_string(self):
         # Convert the string to a list of ASCII values
         ascii_values = StringAsciiConverter.to_ascii(self.string_to_encode)
 
-        # Convert the additional string to a list of ASCII values
-        additional_values = self.__get_random_salt(len(ascii_values))
+        additional_values = self.__get_random_salt(len(
+            ascii_values)) if self.additional_string is None else StringAsciiConverter.to_ascii(self.additional_string)
 
         # Insert additional values between each existing value
         listLength = len(ascii_values)
