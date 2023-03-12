@@ -14,12 +14,12 @@ if __name__ == "__main__":
             isQuite = True
             break
         else:
-            splitted_input = input_string.split()
+            try:
+                splitted_input = input_string.split()
 
-            if len(splitted_input) >= 3:
+                if len(splitted_input) >= 3:
 
-                if splitted_input[0] == 'encode':
-                    try:
+                    if splitted_input[0] == 'encode':
                         # Encode
                         optional_parameter = splitted_input[3] if len(
                             splitted_input) == 4 else None
@@ -27,18 +27,11 @@ if __name__ == "__main__":
                             splitted_input[1], int(splitted_input[2]), optional_parameter)
                         encoder_result = encoder.encode_string()
                         print(encoder_result)
-                    except:
-                        print('Invalid Input!')
 
-                elif splitted_input[0] == 'decode':
-                    try:
+                    elif splitted_input[0] == 'decode':
                         # Decode
                         decoder = Decoder(
                             splitted_input[1], int(splitted_input[2]))
                         print(decoder.decode_string())
-                    except:
-                        print('Invalid Input!')
-                else:
-                    print('Invalid Input!')
-            else:
+            except:
                 print('Invalid Input!')
