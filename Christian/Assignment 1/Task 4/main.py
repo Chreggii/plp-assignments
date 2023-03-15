@@ -6,12 +6,12 @@ if __name__ == "__main__":
 
     allowed_keywords = ['encode', 'decode']
 
-    isQuite = False
+    is_quit = False
 
-    while not isQuite:
+    while not is_quit:
         input_string = input("> ")
         if input_string == 'quit':
-            isQuite = True
+            is_quit = True
             break
         else:
             try:
@@ -21,10 +21,10 @@ if __name__ == "__main__":
 
                     if splitted_input[0] == 'encode':
                         # Encode
-                        optional_parameter = splitted_input[3] if len(
+                        additional_string = splitted_input[3] if len(
                             splitted_input) == 4 else None
                         encoder = Encoder(
-                            splitted_input[1], int(splitted_input[2]), optional_parameter)
+                            splitted_input[1], int(splitted_input[2]), additional_string)
                         encoder_result = encoder.encode_string()
                         print(encoder_result)
 
@@ -33,5 +33,10 @@ if __name__ == "__main__":
                         decoder = Decoder(
                             splitted_input[1], int(splitted_input[2]))
                         print(decoder.decode_string())
+
+                    else:
+                        raise
+                else:
+                    raise
             except:
                 print('Invalid Input!')
