@@ -11,7 +11,7 @@ class Decoder:
     def decode_string(self):
 
         # Reset ROT
-        string = RotOperator(self.string_to_decode, self.offset).rest_rot()
+        string = RotOperator(self.string_to_decode, self.offset).reset_rot()
 
         # Convert the string to a list of ASCII values
         ascii_values = StringAsciiConverter.to_ascii(string)

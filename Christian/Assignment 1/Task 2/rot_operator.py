@@ -15,5 +15,5 @@ class RotOperator:
         return out_phrase
 
     # Reset ROT
-    def rest_rot(self):
+    def reset_rot(self):
         return self.apply_rot(self.offset*(-1))
