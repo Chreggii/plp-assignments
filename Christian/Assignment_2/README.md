@@ -4,7 +4,7 @@
 
 The screenshots which are showing that the code is running can be found in the `screenshots` folder.
 
-Since the zip file would be too big, I published them on Youtube:
+Since the zip file would be too big, I published the videos on Youtube:
 
 - Quick Sort | 101 entities | 16ms delay | dark mode -> https://youtu.be/V4L8IHl9YDI
 - Selection Sort | 120 entities | 16ms delay | dark mode -> https://youtu.be/MpZmIiAObYA
