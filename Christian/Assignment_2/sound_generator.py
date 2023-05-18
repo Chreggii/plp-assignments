@@ -1,6 +1,5 @@
 import numpy as np
 import scipy as sp
-import os
 
 F_SAMPLE = 44100
 OVERSAMPLE = 2
