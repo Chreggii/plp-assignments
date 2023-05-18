@@ -8,7 +8,9 @@ from selection_sort import SelectionSort
 from graphic import Graphic
 import numpy as np
 import subprocess
+import warnings
 
+warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 class SortVisualizer():
 
