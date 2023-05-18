@@ -1,5 +1,6 @@
 import numpy as np
 import scipy as sp
+import os
 
 F_SAMPLE = 44100
 OVERSAMPLE = 2
@@ -33,8 +34,12 @@ class SoundGenerator():
 
         wav_data = (2**15*(wav_data/np.max(np.abs(wav_data)))).astype(np.int16)
 
+        folder = "sound"
+        if not os.path.exists(folder):
+            os.makedirs(folder)
+
         sp.io.wavfile.write(
-            f"{dir}/sound/sound.wav", F_SAMPLE, wav_data)
+            f"{folder}/sound.wav", F_SAMPLE, wav_data)
 
     def freq_map(self, x, x_min=0, x_max=1000, freq_min=120, freq_max=1200):
         """ map a value x to a frequency f and return a chunk of that frequency for the specificed time dt"""

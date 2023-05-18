@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.animation import FuncAnimation
+import os
 
 plt.rcParams["font.size"] = 16
 
@@ -30,8 +31,12 @@ class Graphic():
         
         ani = FuncAnimation(fig, self.update, frames=range(len(self.array.full_copies)),
                             blit=True, interval=1000./self.fps, repeat=False)
+        
+        folder = "videos"
+        if not os.path.exists(folder):
+            os.makedirs(folder)
 
-        ani.save('videos/video.mp4')
+        ani.save(f'{folder}/video.mp4')
 
     def update(self, frame):
         self.txt.set_text(f"Accesses = {frame}")
