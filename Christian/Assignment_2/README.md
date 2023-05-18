@@ -12,7 +12,6 @@ Since the zip file would be too big, I published the videos on Youtube:
 - Insertion Sort | 101 entities | 16ms delay | light mode -> https://youtu.be/hYAlzI3S9uU
 - Insertion Sort | 110 entities | 50ms delay | dark mode -> https://youtu.be/DJkRuKLFfHw
 - Quick Sort | 120 entities | 100ms delay | dark mode -> https://youtu.be/1BkXzuCOaGE
-- Insertion Sort | 230 entities | 16ms delay | dark mode -> https://youtu.be/lqO4g8lzkUo
 
 ## Run Appliation
 
