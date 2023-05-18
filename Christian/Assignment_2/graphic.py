@@ -27,6 +27,7 @@ class Graphic():
                            va="top", transform=ax.transAxes)
 
         print('Video is generating. This can take a while. Please wait...')
+        
         ani = FuncAnimation(fig, self.update, frames=range(len(self.array.full_copies)),
                             blit=True, interval=1000./self.fps, repeat=False)
 

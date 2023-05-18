@@ -5,10 +5,7 @@ import os
 F_SAMPLE = 44100
 OVERSAMPLE = 2
 
-dir = "d:\Privat\git\plp-assignments\Christian\Assignment_2" if os.getcwd(
-) == "d:\Privat\git\plp-assignments" else os.getcwd()
-
-
+# Worked out this code together with Philipp.
 class SoundGenerator():
 
     def __init__(self, arr, fps):
